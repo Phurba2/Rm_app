@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "225076234696",
+    "firebase_url": "https://restaurantapp-42166-default-rtdb.firebaseio.com",
+    "project_id": "restaurantapp-42166",
+    "storage_bucket": "restaurantapp-42166.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225076234696:android:33d39e5807566fad8c18fd",
+        "android_client_info": {
+          "package_name": "com.example.dem_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmOw8iRxANswLr8TpcxI4rEej0sDnFFws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225076234696:android:437eb7ce035b78f98c18fd",
+        "android_client_info": {
+          "package_name": "com.example.waiter_order_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmOw8iRxANswLr8TpcxI4rEej0sDnFFws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
