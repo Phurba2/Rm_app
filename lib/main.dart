@@ -9,18 +9,20 @@ class Order {
   final String tableName;
   final List<OrderItem> items;
   final double totalPrice;
+  final int timestamp; // Added for sorting
 
   Order({
     required this.orderId,
     required this.tableName,
     required this.items,
+    required this.timestamp,
   }) : totalPrice = items.fold(0, (sum, item) => sum + (item.price * item.quantity));
 
   factory Order.fromJson(Map<dynamic, dynamic> json) {
     var itemsJson = json['items'] as List<dynamic>? ?? [];
     return Order(
       orderId: json['orderId']?.toString() ?? 'Unknown',
-      tableName: json['table']?.toString() ?? 'Unknown', // Changed from tableName to table
+      tableName: json['table']?.toString() ?? 'Unknown',
       items: itemsJson
           .map((item) {
             try {
@@ -33,6 +35,7 @@ class Order {
           .where((item) => item != null)
           .cast<OrderItem>()
           .toList(),
+      timestamp: (json['timestamp'] as num?)?.toInt() ?? 0, // Handle null
     );
   }
 }
@@ -146,6 +149,9 @@ class OrderListScreenState extends State<OrderListScreen> {
                 .where((order) => order != null)
                 .cast<Order>()
                 .toList();
+
+            // Sort orders by timestamp in descending order (newest first)
+            orders.sort((a, b) => b.timestamp.compareTo(a.timestamp));
 
             if (orders.isEmpty) {
               return const Center(child: Text('No valid orders found.'));
